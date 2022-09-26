@@ -27,8 +27,9 @@ Project File Date:  09/26/2022
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ACM32'
+compiling main.c...
 linking...
-Program Size: Code=1724 RO-data=224 RW-data=24 ZI-data=2144  
+Program Size: Code=7754 RO-data=530 RW-data=168 ZI-data=18168  
 ".\Objects\ACM32.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -38,9 +39,36 @@ Package Vendor: Aisinochip
                 Aisinochip.ACM32F0X0.1.0.1
                 Aisinochip ACM32F0X0 ARM Cortex-M0 Device Family Pack
 
+Package Vendor: RealThread
+                https://www.rt-thread.org/download/mdk/RealThread.RT-Thread.3.1.5.pack
+                RealThread.RT-Thread.3.1.5
+                RT-Thread Software Components
+   * Component: kernel Version: 3.1.5
+
 <h2>Collection of Component include folders:</h2>
+  ./RTE/RTOS
+  ./RTE/_ACM32
+  D:/Users/KING/AppData/Local/Arm/Packs/RealThread/RT-Thread/3.1.5/include
 
 <h2>Collection of Component Files used:</h2>
+
+   * Component: RealThread.RT-Thread::RTOS:kernel:3.1.5
+      Source file:   src/thread.c
+      Source file:   src/kservice.c
+      Source file:   src/components.c
+      Source file:   src/idle.c
+      Source file:   src/ipc.c
+      Source file:   src/object.c
+      Include file:  bsp/_template/rtconfig.h
+      Source file:   src/scheduler.c
+      Source file:   libcpu/arm/cortex-m0/cpuport.c
+      Source file:   src/clock.c
+      Source file:   src/irq.c
+      Source file:   src/mempool.c
+      Source file:   src/mem.c
+      Source file:   libcpu/arm/cortex-m0/context_rvds.S
+      Source file:   src/timer.c
+      Source file:   bsp/_template/board.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

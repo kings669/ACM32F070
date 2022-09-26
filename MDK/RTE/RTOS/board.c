@@ -10,6 +10,7 @@
 
 #include <rthw.h>
 #include <rtthread.h>
+#include "ACM32Fxx_HAL.h"
 
 #if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
 /*
@@ -38,19 +39,26 @@ void rt_os_tick_callback(void)
 
     rt_interrupt_leave();
 }
+/* System count in SysTick_Handler */
+extern volatile uint32_t gu32_SystemCount;
+void SysTick_Handler(void)
+{
+	gu32_SystemCount++;
+	rt_os_tick_callback();
+}
 
 /**
  * This function will initial your board.
  */
 void rt_hw_board_init(void)
 {
-#error "TODO 1: OS Tick Configuration."
     /* 
      * TODO 1: OS Tick Configuration
      * Enable the hardware timer and call the rt_os_tick_callback function
      * periodically with the frequency RT_TICK_PER_SECOND. 
      */
-
+		System_Init();
+	
     /* Call components board initial (use INIT_BOARD_EXPORT()) */
 #ifdef RT_USING_COMPONENTS_INIT
     rt_components_board_init();

@@ -1,9 +1,8 @@
-./objects/idle.o: \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\src\idle.c \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rthw.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtthread.h \
-  RTE\RTOS\rtconfig.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdebug.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdef.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtservice.h
+.\objects\idle.o: D:/Users/KING/AppData/Local/Arm/Packs/RealThread/RT-Thread/3.1.5/src/idle.c
+.\objects\idle.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rthw.h
+.\objects\idle.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtthread.h
+.\objects\idle.o: .\RTE\RTOS\rtconfig.h
+.\objects\idle.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdebug.h
+.\objects\idle.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdef.h
+.\objects\idle.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\idle.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtservice.h

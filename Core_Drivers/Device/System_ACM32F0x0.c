@@ -8,6 +8,7 @@
   ******************************************************************************
 */
 #include "ACM32Fxx_HAL.h"
+#include <rtthread.h>
 
 uint32_t gu32_SystemClock;
 uint32_t gu32_APBClock;
@@ -32,10 +33,10 @@ volatile uint32_t gu32_SystemCount;
 * Output      : none   
 * Author      : xwl                           
 **********************************************************************************/  
-void HardFault_Handler(void)
-{
-    while(1);   
-} 
+//void HardFault_Handler(void)
+//{
+//    while(1);   
+//} 
 
 void (*SysTick_Handler_Callback)(void);//Systick中断回调函数指针
 /*********************************************************************************
@@ -45,14 +46,14 @@ void (*SysTick_Handler_Callback)(void);//Systick中断回调函数指针
 * Output      : none 
 * Author      : Chris_Kyle                         
 **********************************************************************************/
-void SysTick_Handler(void)
-{
-    gu32_SystemCount++;
-    if(SysTick_Handler_Callback != NULL)
-    {
-        SysTick_Handler_Callback();
-    }
-}
+//void SysTick_Handler(void)
+//{
+//    gu32_SystemCount++;
+//    if(SysTick_Handler_Callback != NULL)
+//    {
+//        SysTick_Handler_Callback();
+//    }
+//}
 
 /*********************************************************************************
 * Function    : System_SysTick_Init

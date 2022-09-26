@@ -36,3 +36,9 @@
 .\objects\system_acm32f0x0.o: ..\Core_Drivers\HAL_Driver\Inc\HAL_AES.h
 .\objects\system_acm32f0x0.o: ..\Core_Drivers\HAL_Driver\Inc\HAL_HRNG.h
 .\objects\system_acm32f0x0.o: ..\Core_Drivers\HAL_Driver\Inc\HAL_DIV.h
+.\objects\system_acm32f0x0.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtthread.h
+.\objects\system_acm32f0x0.o: .\RTE\RTOS\rtconfig.h
+.\objects\system_acm32f0x0.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdebug.h
+.\objects\system_acm32f0x0.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdef.h
+.\objects\system_acm32f0x0.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\system_acm32f0x0.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtservice.h

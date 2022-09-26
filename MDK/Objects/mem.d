@@ -1,9 +1,8 @@
-./objects/mem.o: \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\src\mem.c \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rthw.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtthread.h \
-  RTE\RTOS\rtconfig.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdebug.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdef.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
-  D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtservice.h
+.\objects\mem.o: D:/Users/KING/AppData/Local/Arm/Packs/RealThread/RT-Thread/3.1.5/src/mem.c
+.\objects\mem.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rthw.h
+.\objects\mem.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtthread.h
+.\objects\mem.o: .\RTE\RTOS\rtconfig.h
+.\objects\mem.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdebug.h
+.\objects\mem.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdef.h
+.\objects\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\mem.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtservice.h

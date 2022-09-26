@@ -350,9 +350,11 @@ ARM Macro Assembler    Page 6
               00000800 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
-ork --depend=.\objects\startup_acm32f0x0.d -o.\objects\startup_acm32f0x0.o --pr
-edefine="__UVISION_VERSION SETA 537" --list=.\listings\startup_acm32f0x0.lst ..
-\Core_Drivers\Device\Startup_ACM32F0x0.s
+ork --depend=.\objects\startup_acm32f0x0.d -o.\objects\startup_acm32f0x0.o -I.\
+RTE\RTOS -I.\RTE\_ACM32 -ID:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-T
+hread\3.1.5\include --predefine="__UVISION_VERSION SETA 537" --predefine="_RTE_
+ SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\startup_acm32f0x0.lst ..\
+Core_Drivers\Device\Startup_ACM32F0x0.s
 
 
 
@@ -914,4 +916,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-390 symbols in table
+391 symbols in table

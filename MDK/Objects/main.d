@@ -36,3 +36,9 @@
 .\objects\main.o: ..\Core_Drivers\HAL_Driver\Inc\HAL_AES.h
 .\objects\main.o: ..\Core_Drivers\HAL_Driver\Inc\HAL_HRNG.h
 .\objects\main.o: ..\Core_Drivers\HAL_Driver\Inc\HAL_DIV.h
+.\objects\main.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtthread.h
+.\objects\main.o: .\RTE\RTOS\rtconfig.h
+.\objects\main.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdebug.h
+.\objects\main.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdef.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\main.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtservice.h
