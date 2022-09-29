@@ -325,7 +325,7 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Core_Drivers\CMSIS;..\Core_Drivers\Device;..\Core_Drivers\HAL_Driver\Inc;..\Core_Drivers\HAL_Driver\Src</IncludePath>
+              <IncludePath>..\Core_Drivers\CMSIS;..\Core_Drivers\Device;..\Core_Drivers\HAL_Driver\Inc;..\Core_Drivers\HAL_Driver\Src;..\User\BSP;..\Application</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -556,7 +556,69 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>User/BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>led_usr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\led_usr.c</FilePath>
+            </File>
+            <File>
+              <FileName>ac_fifo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\ac_fifo.c</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\buzzer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd_GDC03828.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\lcd_GDC03828.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd_GDC04212.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\lcd_GDC04212.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd_YR1618A.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\lcd_YR1618A.c</FilePath>
+            </File>
+            <File>
+              <FileName>SHT30.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\SHT30.c</FilePath>
+            </File>
+            <File>
+              <FileName>TKey.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\TKey.c</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\BSP\rtc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Application</GroupName>
+          <Files>
+            <File>
+              <FileName>LED_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\LED_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\LCD_Task.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::RTOS</GroupName>
