@@ -22,14 +22,14 @@ Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
 D:\KING\ACM32F070\ACM32F070\MDK\ACM32.uvprojx
-Project File Date:  09/29/2022
+Project File Date:  10/03/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ACM32'
-compiling LCD_Task.c...
+compiling main.c...
 linking...
-Program Size: Code=12934 RO-data=538 RW-data=584 ZI-data=18800  
+Program Size: Code=21802 RO-data=538 RW-data=740 ZI-data=19364  
 ".\Objects\ACM32.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -53,22 +53,22 @@ Package Vendor: RealThread
 <h2>Collection of Component Files used:</h2>
 
    * Component: RealThread.RT-Thread::RTOS:kernel:3.1.5
-      Include file:  bsp/_template/rtconfig.h
-      Source file:   bsp/_template/board.c
-      Source file:   src/clock.c
-      Source file:   src/components.c
-      Source file:   src/idle.c
       Source file:   src/ipc.c
-      Source file:   src/irq.c
+      Source file:   src/clock.c
       Source file:   src/kservice.c
+      Source file:   src/scheduler.c
+      Source file:   src/irq.c
+      Source file:   src/idle.c
+      Source file:   src/thread.c
+      Source file:   src/components.c
+      Source file:   src/timer.c
+      Source file:   src/object.c
       Source file:   libcpu/arm/cortex-m0/cpuport.c
       Source file:   libcpu/arm/cortex-m0/context_rvds.S
-      Source file:   src/timer.c
-      Source file:   src/thread.c
-      Source file:   src/mempool.c
-      Source file:   src/object.c
       Source file:   src/mem.c
-      Source file:   src/scheduler.c
+      Include file:  bsp/_template/rtconfig.h
+      Source file:   src/mempool.c
+      Source file:   bsp/_template/board.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

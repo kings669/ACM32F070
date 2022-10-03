@@ -1,11 +1,16 @@
 #include "LCD_Task.h"
 #include "ACM32Fxx_HAL.h"
 #include "rtc.h"
+#include "SHT30.h"
 #include <rtthread.h>
 
 #define THREAD_PRIORITY         5
 #define THREAD_STACK_SIZE       1024
 #define THREAD_TIMESLICE        5
+
+#define BUFFER_LENGTH    (256)
+uint8_t gu8_TxBuffer[BUFFER_LENGTH];
+uint8_t gu8_RxBuffer[BUFFER_LENGTH];
 
 static rt_thread_t tid2 = RT_NULL;
 
@@ -16,6 +21,7 @@ LCD_HandleTypeDef         *lcdhandle;  //LCD Handle指针
 extern LCD_HandleTypeDef         lcdhandle_GDC04212;
 extern LCD_HandleTypeDef         lcdhandle_GDC03828;
 extern LCD_HandleTypeDef         lcdhandle_YR1618A;
+extern I2C_HandleTypeDef I2C_Handle;   //I2C Handle指针
 
 void(*LCD_DisplayNum)(uint32_t);//LCD显示函数指针
 
@@ -25,20 +31,42 @@ void LCD_Config(void);
 
 void LCD_up_display(int num);
 void LCD_time_display(void);
+void LCD_SHT30_display(void);
 
 uint32_t fu32_Displayup[4]={0},fu32_Displaydown[4]={0},fu32_num_123567p[7]={0},fu32_num_col[2]={1,0},fu32_num_s=0;
 
 void LCD_entry(void* paramenter)
 {
 	LCD_Config();
-	LCD_YR1618A_SelfDisplay();
+	//LCD_YR1618A_SelfDisplay();
 	RTC_Config();
+	SHT30_Init();
 	while(1)
 	{
+		LCD_SHT30_display();
 		LCD_time_display();
 		LCD_YR1618A_VIEW(fu32_Displayup,fu32_Displaydown,fu32_num_123567p,fu32_num_col,fu32_num_s);
 		rt_thread_mdelay(50);
 	}
+}
+	
+void LCD_SHT30_display(void)
+{
+	float ff_getTempHum[2];
+	SHT30_Read_Dat(I2C_Handle,gu8_RxBuffer);
+	SHT30_Read_Result(gu8_RxBuffer,ff_getTempHum);
+	fu32_num_123567p[4]|=1;
+	fu32_num_s |=S_DATA[2];
+	fu32_num_s &=~S_DATA[0];
+	fu32_num_s |=S_DATA[12];//S13_BATW,S14_BAT1,S15_BAT2,S16_BAT3
+	fu32_num_s |=S_DATA[13];
+	fu32_num_s |=S_DATA[14];
+	fu32_num_s |=S_DATA[15];
+	
+	fu32_Displaydown[0] = (int)ff_getTempHum[0]/10;
+	fu32_Displaydown[1] = (int)ff_getTempHum[0]%10;
+	fu32_Displaydown[2] = (int)((int)(ff_getTempHum[0]*10))%10;
+	fu32_Displaydown[3] = (int)((int)(ff_getTempHum[0]*100))%10;
 }
 
 void LCD_time_display(void)
@@ -51,8 +79,8 @@ void LCD_time_display(void)
 	fu32_Displayup[2]=(gstr_Time_Get.u8_Minutes & 0xF0)>>4;
 	fu32_Displayup[3]=(gstr_Time_Get.u8_Minutes & 0x0F);
 	
-	fu32_Displaydown[2]=(gstr_Time_Get.u8_Seconds & 0xF0)>>4;
-	fu32_Displaydown[3]=(gstr_Time_Get.u8_Seconds & 0x0F);
+	//fu32_Displaydown[2]=(gstr_Time_Get.u8_Seconds & 0xF0)>>4;
+	//fu32_Displaydown[3]=(gstr_Time_Get.u8_Seconds & 0x0F);
 }
 
 void LCD_up_display(int num)

@@ -163,9 +163,9 @@ ARM Macro Assembler    Page 3
 ]
    92 00000000                 IMPORT           System_Core_Config
    93 00000000                 IMPORT           __main
-   94 00000000 4808            LDR              R0, =System_Core_Config
+   94 00000000 4805            LDR              R0, =System_Core_Config
    95 00000002 4780            BLX              R0
-   96 00000004 4808            LDR              R0, =__main
+   96 00000004 4805            LDR              R0, =__main
    97 00000006 4700            BX               R0
    98 00000008                 ENDP
    99 00000008         
@@ -322,39 +322,29 @@ ARM Macro Assembler    Page 5
   194 00000018         ; User Initial Stack & Heap
   195 00000018         
   196 00000018                 IF               :DEF:__MICROLIB
-  203 00000018         
+  197 00000018         
 
 
 
 ARM Macro Assembler    Page 6 
 
 
-  204 00000018                 IMPORT           __use_two_region_memory
-  205 00000018                 EXPORT           __user_initial_stackheap
-  206 00000018         __user_initial_stackheap
-  207 00000018         
-  208 00000018 4804            LDR              R0, =  Heap_Mem
-  209 0000001A 4905            LDR              R1, =(Stack_Mem + Stack_Size)
-  210 0000001C 4A03            LDR              R2, = (Heap_Mem +  Heap_Size)
-  211 0000001E 4B05            LDR              R3, = Stack_Mem
-  212 00000020 4770            BX               LR
-  213 00000022         
-  214 00000022 00 00           ALIGN
-  215 00000024         
-  216 00000024                 ENDIF
-  217 00000024         
-  218 00000024                 END
+  198 00000018                 EXPORT           __initial_sp
+  199 00000018                 EXPORT           __heap_base
+  200 00000018                 EXPORT           __heap_limit
+  201 00000018         
+  202 00000018                 ELSE
+  216                          ENDIF
+  217 00000018         
+  218 00000018                 END
               00000000 
-              00000000 
-              00000000 
-              00000800 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=.\objects\startup_acm32f0x0.d -o.\objects\startup_acm32f0x0.o -I.\
 RTE\RTOS -I.\RTE\_ACM32 -ID:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-T
-hread\3.1.5\include --predefine="__UVISION_VERSION SETA 537" --predefine="_RTE_
- SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\startup_acm32f0x0.lst ..\
-Core_Drivers\Device\Startup_ACM32F0x0.s
+hread\3.1.5\include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERS
+ION SETA 537" --predefine="_RTE_ SETA 1" --predefine="_RTE_ SETA 1" --list=.\li
+stings\startup_acm32f0x0.lst ..\Core_Drivers\Device\Startup_ACM32F0x0.s
 
 
 
@@ -375,9 +365,8 @@ Symbol: Stack_Mem
    Definitions
       At line 20 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
    Uses
-      At line 209 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-      At line 211 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-
+      None
+Comment: Stack_Mem unused
 __initial_sp 00000800
 
 Symbol: __initial_sp
@@ -385,7 +374,8 @@ Symbol: __initial_sp
       At line 21 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
    Uses
       At line 37 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-Comment: __initial_sp used once
+      At line 198 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
+
 3 symbols
 
 
@@ -407,25 +397,24 @@ Symbol: Heap_Mem
    Definitions
       At line 25 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
    Uses
-      At line 208 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-      At line 210 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-
+      None
+Comment: Heap_Mem unused
 __heap_base 00000000
 
 Symbol: __heap_base
    Definitions
       At line 24 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
    Uses
-      None
-Comment: __heap_base unused
+      At line 199 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
+Comment: __heap_base used once
 __heap_limit 00000000
 
 Symbol: __heap_limit
    Definitions
       At line 26 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
    Uses
-      None
-Comment: __heap_limit unused
+      At line 200 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
+Comment: __heap_limit used once
 4 symbols
 
 
@@ -851,15 +840,7 @@ Relocatable symbols
       At line 55 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
       At line 127 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
 
-__user_initial_stackheap 00000018
-
-Symbol: __user_initial_stackheap
-   Definitions
-      At line 206 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-   Uses
-      At line 205 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-Comment: __user_initial_stackheap used once
-41 symbols
+40 symbols
 
 
 
@@ -873,8 +854,7 @@ Symbol: Heap_Size
       At line 17 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
    Uses
       At line 25 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-      At line 210 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-
+Comment: Heap_Size used once
 Stack_Size 00000800
 
 Symbol: Stack_Size
@@ -882,8 +862,7 @@ Symbol: Stack_Size
       At line 16 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
    Uses
       At line 20 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-      At line 209 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-
+Comment: Stack_Size used once
 2 symbols
 
 
@@ -907,13 +886,5 @@ Symbol: __main
    Uses
       At line 96 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
 Comment: __main used once
-__use_two_region_memory 00000000
-
-Symbol: __use_two_region_memory
-   Definitions
-      At line 204 in file ..\Core_Drivers\Device\Startup_ACM32F0x0.s
-   Uses
-      None
-Comment: __use_two_region_memory unused
-3 symbols
-391 symbols in table
+2 symbols
+388 symbols in table

@@ -42,3 +42,6 @@
 .\objects\main.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdef.h
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\main.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtservice.h
+.\objects\main.o: ..\User\BSP\TKey.h
+.\objects\main.o: ..\User\BSP\buzzer.h
+.\objects\main.o: ..\User\BSP\usart.h

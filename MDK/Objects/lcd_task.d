@@ -41,6 +41,7 @@
 .\objects\lcd_task.o: ..\User\BSP\lcd_GDC03828.h
 .\objects\lcd_task.o: ..\User\BSP\lcd_YR1618A.h
 .\objects\lcd_task.o: ..\User\BSP\rtc.h
+.\objects\lcd_task.o: ..\User\BSP\SHT30.h
 .\objects\lcd_task.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtthread.h
 .\objects\lcd_task.o: .\RTE\RTOS\rtconfig.h
 .\objects\lcd_task.o: D:\Users\KING\AppData\Local\Arm\Packs\RealThread\RT-Thread\3.1.5\include\rtdebug.h

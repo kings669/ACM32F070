@@ -68,7 +68,8 @@ typedef enum
 #define    SHT30_ADDR_READ          (0x44<<1)+1     
 
 
-
+void SHT30_Init(void);
+void SHT30_Read_Result(uint8_t *sht30_data,float *getTempHum);
 
 
 uint8_t SHT30_Reset(I2C_HandleTypeDef I2C_Handle);

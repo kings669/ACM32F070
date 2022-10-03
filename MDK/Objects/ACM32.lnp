@@ -36,6 +36,7 @@
 ".\objects\sht30.o"
 ".\objects\tkey.o"
 ".\objects\rtc.o"
+".\objects\usart.o"
 ".\objects\led_task.o"
 ".\objects\lcd_task.o"
 ".\objects\context_rvds.o"
@@ -53,7 +54,7 @@
 ".\objects\thread.o"
 ".\objects\timer.o"
 ".\objects\board.o"
---strict --scatter ".\Objects\ACM32.sct"
+--library_type=microlib --strict --scatter ".\Objects\ACM32.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\ACM32.map" -o .\Objects\ACM32.axf
